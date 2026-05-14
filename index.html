@@ -92,6 +92,32 @@
     margin: 0 auto;
     image-rendering: pixelated; 
         }
+        @media (max-width: 768px) {
+    .music-card {
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .track-text {
+        font-size: 11px; /* Smaller text for small screens */
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .music-btn-img {
+        width: 30px; /* Smaller buttons on mobile */
+        height: 30px;
+    }
+}
         
 
      </style>
@@ -101,9 +127,13 @@
 
 
 <audio id="game-audio"></audio>
-    <div class="music-card">
-  <span id="track-title" class="track-text">Music: Off</span>
-  <div class="music-controls">
+    <div class="music-card" id="music-player">
+    <button onclick="toggleMinimize()" style="font-size: 10px; margin-bottom: 5px;">_</button>
+    <div id="player-content">
+        <span id="track-title" class="track-text">Music: Off</span>
+        <!-- ... rest of your buttons ... -->
+    </div>
+</div>
     <!-- Previous Button -->
     <button onclick="prevTrack()">
       <img src="images/flan is listening.gif" alt="Prev" class="music-btn-img">
@@ -241,6 +271,14 @@
     playIconImg.src = "images/frog choir.gif";
     trackTitle.innerText = playlist[currentTrackIndex].name;
   }
+  function toggleMinimize() {
+   const content = document.getElementById("player-content");
+     if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
 </script>
 
 
