@@ -83,6 +83,61 @@
     </button>
   </div>
 </div>
+        <!-- JavaScript to control the playlist and handle browser rules -->
+<script>
+  // List your uploaded mp3 files and their display names here
+  const playlist = [
+    { name: "Track 1 - Title Screen", file: "audio/Serenade of Water - The Legend of Zelda_ Twilight Princess [XviGp0dWVTU].mp3" },
+    { name: "Track 2 - Boss Theme", file: "audio/track2.mp3" },
+    { name: "Track 3 - Town Theme", file: "audio/track3.mp3" }
+  ];
+
+  let currentTrackIndex = 0;
+  const audioPlayer = document.getElementById("game-audio");
+  const playIconImg = document.getElementById("play-icon-img");
+  const trackTitle = document.getElementById("track-title");
+
+  // Load the first track automatically on startup (but do not autoplay due to browser rules)
+  audioPlayer.src = playlist[currentTrackIndex].file;
+
+  function togglePlay() {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      // Swaps your play icon to the pause icon because it is actively playing
+      playIconImg.src = "images/pause-icon.png";
+      trackTitle.innerText = playlist[currentTrackIndex].name;
+    } else {
+      audioPlayer.pause();
+      // Swaps it back to your play icon when paused
+      playIconImg.src = "images/play-icon.png";
+    }
+  }
+
+  function stopMusic() {
+    audioPlayer.pause(); 
+    audioPlayer.currentTime = 0; // Rewinds song to 0 seconds
+    playIconImg.src = "images/play-icon.png"; // Resets icon to play state
+    trackTitle.innerText = "Music: Stopped";
+  }
+
+  function nextTrack() {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    changeTrack();
+  }
+
+  function prevTrack() {
+    currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+    changeTrack();
+  }
+
+  function changeTrack() {
+    audioPlayer.src = playlist[currentTrackIndex].file;
+    audioPlayer.play();
+    playIconImg.src = "images/pause-icon.png";
+    trackTitle.innerText = playlist[currentTrackIndex].name;
+  }
+</script>
+
 
 
 
