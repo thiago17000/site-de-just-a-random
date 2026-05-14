@@ -128,31 +128,27 @@
 
 <audio id="game-audio"></audio>
     <div class="music-card" id="music-player">
-    <button onclick="toggleMinimize()" style="font-size: 10px; margin-bottom: 5px;">_</button>
+    <!-- The toggle button stays visible -->
+    <button onclick="toggleMinimize()" style="background:none; border:1px solid #fff; color:#fff; cursor:pointer; width: 100%;">_</button>
+    
+    <!-- Everything in this div will vanish -->
     <div id="player-content">
         <span id="track-title" class="track-text">Music: Off</span>
-        <!-- ... rest of your buttons ... -->
+        <div class="music-controls">
+            <button onclick="prevTrack()">
+                <img src="images/prev-icon.png" alt="Prev" class="music-btn-img">
+            </button>
+            <button id="play-btn" onclick="togglePlay()">
+                <img src="images/frog choir.gif" alt="Play" class="music-btn-img" id="play-icon-img">
+            </button>
+            <button id="stop-btn" onclick="stopMusic()">
+                <img src="images/ff6.png" alt="Stop" class="music-btn-img" id="stop-icon-img">
+            </button>
+            <button onclick="nextTrack()">
+                <img src="images/next-icon.png" alt="Next" class="music-btn-img">
+            </button>
+        </div>
     </div>
-</div>
-    <!-- Previous Button -->
-    <button onclick="prevTrack()">
-      <img src="images/flan is listening.gif" alt="Prev" class="music-btn-img">
-    </button>
-    
-    <!-- Play/Pause Button -->
-    <button id="play-btn" onclick="togglePlay()">
-      <img src="images/frog choir.gif" alt="Play" class="music-btn-img" id="play-icon-img">
-    </button>
-         
-    <button id="stop-btn" onclick="stopMusic()">
-      <img src="images/ff6.png" alt="Stop" class="music-btn-img" id="stop-icon-img">
-    </button>
-    
-    <!-- Next Button -->
-    <button onclick="nextTrack()">
-      <img src="images/sub.gif" alt="Next" class="music-btn-img">
-    </button>
-  </div>
 </div>
 
 
