@@ -71,6 +71,10 @@
     <button id="play-btn" onclick="togglePlay()">
       <img src="images/play-icon.png" alt="Play" class="music-btn-img" id="play-icon-img">
     </button>
+         Pause Button
+    <button id="stop-btn" onclick="stopMusic()">
+      <img src="images/frog choir.gif" alt="Stop" class="music-btn-img" id="stop-icon-img">
+    </button>
     
     <!-- Next Button -->
     <button onclick="nextTrack()">
@@ -100,34 +104,19 @@
     <img src="images/Risada.gif" alt="Logo" class="corner-badge">
     </a>
 
+    .music-btn-img {
+    width: 20px;       /* Set this to whatever size matches your buttons */
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    image-rendering: pixelated; /* Keeps your pixel art buttons sharp! */
+}
+
+
     
 
     
-    .music-card {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: rgba(34, 34, 34, 0.9);
-        border: 3px solid #ffffff;
-        border-radius: 8px;
-        padding: 12px;
-        z-index: 1000;
-        text-align: center;
-    }
-    .track-text {
-        display: block;
-        font-size: 14px;
-        font-weight: bold;
-        color: #00ffcc;
-        margin-bottom: 8px;
-    }
-    .music-controls button {
-        background-color: #333333;
-        color: #ffffff;
-        border: 2px solid #ffffff;
-        padding: 6px 10px;
-        margin: 0 2px;
-        cursor: pointer;
+
     }
 </style>
 
