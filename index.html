@@ -205,6 +205,7 @@
 
   function togglePlay() {
     if (audioPlayer.paused) {
+      audioPlayer.loop = true;
       audioPlayer.play();
       // Swaps your play icon to the pause icon because it is actively playing
       playIconImg.src = "images/frog choir.gif";
@@ -219,7 +220,7 @@
   function stopMusic() {
     audioPlayer.pause(); 
     audioPlayer.currentTime = 0; // Rewinds song to 0 seconds
-    playIconImg.src = "images/play-icon.png"; // Resets icon to play state
+    playIconImg.src = "images/frog choir.gif"; // Resets icon to play state
     trackTitle.innerText = "Music: Stopped";
   }
 
@@ -235,8 +236,9 @@
 
   function changeTrack() {
     audioPlayer.src = playlist[currentTrackIndex].file;
+    audioPlayer.loop = true;
     audioPlayer.play();
-    playIconImg.src = "images/pause-icon.png";
+    playIconImg.src = "images/frog choir.gif";
     trackTitle.innerText = playlist[currentTrackIndex].name;
   }
 </script>
