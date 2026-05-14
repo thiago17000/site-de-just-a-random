@@ -10,16 +10,17 @@
             width: 100%;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-        }
-        body {
-            margin: 0;
-            padding: 0;
             background-image: url('images/theme_ntp_background.png');
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            background-color: #121212;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
             min-height: 100vh; 
             background-color: #121212; /* Falls back to dark if image loads slowly */
             color: #ffffff;           /* Makes your text white so it is readable */
@@ -98,6 +99,7 @@
     display: block;
     margin: 0 auto;
     image-rendering: pixelated; 
+    object-fit: contain; /* Prevents the icons from stretching/squishing */
         }
         @media (max-width: 768px) {
     .music-card {
