@@ -51,6 +51,40 @@
     image-rendering: pixelated; /* Keeps it sharp! */
     z-index: 100;      /* Ensures it floats on top of the backgrounds */
         }
+        <body>
+
+    <!-- Your existing corner badge link -->
+    <a href="the-other-website.com" target="_blank">
+        <img src="images/your-corner-logo.png" alt="Site Logo" class="corner-badge">
+    </a>
+
+    <!-- ⬇️ PASTE THE HTML BUTTONS AND SCRIPT BLOCK HERE ⬇️ -->
+    <audio id="game-audio" loop></audio>
+
+    <div class="music-card">
+      <span id="track-title" class="track-text">Music: Off</span>
+      <div class="music-controls">
+        <button onclick="prevTrack()">⏮️ Prev</button>
+        <button id="play-btn" onclick="togglePlay()">▶️ Play</button>
+        <button onclick="nextTrack()">⏭️ Next</button>
+      </div>
+    </div>
+
+    <script>
+      const playlist = [
+        { name: "Track 1 - Title Screen", file: "audio/track1.mp3" },
+        { name: "Track 2 - Boss Theme", file: "audio/track2.mp3" },
+        { name: "Track 3 - Town Theme", file: "audio/track3.mp3" }
+      ];
+      // ... rest of the script functions ...
+    </script>
+
+
+    <!-- Your Linktree banner and game list blocks continue normally below here -->
+    <a href="YOUR_LINKTREE_URL_HERE" target="_blank">
+        <img src="images/linktree-banner.gif" alt="Visit my Linktree" class="linktree-banner">
+    </a>
+
 
 
     </style>
@@ -64,6 +98,38 @@
         <a href="https://linktr.ee/justsomerandom17000" target="_blank">
     <img src="images/Risada.gif" alt="Logo" class="corner-badge">
     </a>
+
+    
+
+    /* ⬇️ PASTE THE NEW MUSIC CSS RULES HERE ⬇️ */
+    .music-card {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(34, 34, 34, 0.9);
+        border: 3px solid #ffffff;
+        border-radius: 8px;
+        padding: 12px;
+        z-index: 1000;
+        text-align: center;
+    }
+    .track-text {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        color: #00ffcc;
+        margin-bottom: 8px;
+    }
+    .music-controls button {
+        background-color: #333333;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        padding: 6px 10px;
+        margin: 0 2px;
+        cursor: pointer;
+    }
+</style>
+
 
     <h2>My Game Database</h2>
 
