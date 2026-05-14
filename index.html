@@ -59,26 +59,26 @@
 
 
 
-    <!-- ⬇️ PASTE THE HTML BUTTONS AND SCRIPT BLOCK HERE ⬇️ -->
-    <audio id="game-audio" loop></audio>
-
     <div class="music-card">
-      <span id="track-title" class="track-text">Music: Off</span>
-      <div class="music-controls">
-        <button onclick="prevTrack()">⏮️ Prev</button>
-        <button id="play-btn" onclick="togglePlay()">▶️ Play</button>
-        <button onclick="nextTrack()">⏭️ Next</button>
-      </div>
-    </div>
+  <span id="track-title" class="track-text">Music: Off</span>
+  <div class="music-controls">
+    <!-- Previous Button -->
+    <button onclick="prevTrack()">
+      <img src="images/prev-icon.png" alt="Prev" class="music-btn-img">
+    </button>
+    
+    <!-- Play/Pause Button -->
+    <button id="play-btn" onclick="togglePlay()">
+      <img src="images/play-icon.png" alt="Play" class="music-btn-img" id="play-icon-img">
+    </button>
+    
+    <!-- Next Button -->
+    <button onclick="nextTrack()">
+      <img src="images/next-icon.png" alt="Next" class="music-btn-img">
+    </button>
+  </div>
+</div>
 
-    <script>
-      const playlist = [
-        { name: "Track 1 - Title Screen", file: "audio/track1.mp3" },
-        { name: "Track 2 - Boss Theme", file: "audio/track2.mp3" },
-        { name: "Track 3 - Town Theme", file: "audio/track3.mp3" }
-      ];
-      // ... rest of the script functions ...
-    </script>
 
 
     <!-- Your Linktree banner and game list blocks continue normally below here -->
