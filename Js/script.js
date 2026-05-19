@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Determine the greeting based on the user's local time
+    // ==========================================
+    // 1. TIMED GREETING BANNER
+    // ==========================================
     const currentHour = new Date().getHours();
     let greeting = "Welcome, Traveler!";
     
@@ -12,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         greeting = "Good evening! Welcome to the night hub.";
     }
 
-    // 2. Create and style the greeting banner
     const greetingBanner = document.createElement("div");
-    
     greetingBanner.innerText = greeting;
     greetingBanner.style.background = "#1a1a1a";
     greetingBanner.style.color = "#ff3333"; 
@@ -26,28 +26,23 @@ document.addEventListener("DOMContentLoaded", () => {
     greetingBanner.style.border = "1px solid #ff3333";
     greetingBanner.style.boxShadow = "0 0 10px rgba(255, 51, 51, 0.5)";
     greetingBanner.style.maxWidth = "600px";
-    
-    // Smooth transition setup for fading out
     greetingBanner.style.transition = "opacity 1s ease, transform 1s ease";
     greetingBanner.style.opacity = "1";
 
-    // 3. Inject it at the very top of your page body
     document.body.insertBefore(greetingBanner, document.body.firstChild);
     
-    // 4. The 10-second timer
+    // Hide and remove the banner after 5 seconds
     setTimeout(() => {
-        // Start the fade out and slightly slide it up
         greetingBanner.style.opacity = "0";
         greetingBanner.style.transform = "translateY(-20px)";
         
-        // Wait 1 second for the fade animation to finish, then completely remove it
         setTimeout(() => {
             greetingBanner.remove();
         }, 1000);
     }, 5000); 
 
     // ==========================================
-    // 2. CUSTOM CURSOR CREATION (Sits invisible for now)
+    // 2. CUSTOM CURSOR SETUP & TRACKING
     // ==========================================
     const customCursor = document.createElement("div");
     customCursor.style.width = "20px";
@@ -56,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     customCursor.style.borderRadius = "50px";
     customCursor.style.position = "fixed";
     customCursor.style.transform = "translate(-50%, -50%)";
-    customCursor.style.pointerEvents = "none"; // Keeps it from blocking clicks
+    customCursor.style.pointerEvents = "none"; 
     customCursor.style.zIndex = "9999";
     customCursor.style.boxShadow = "0 0 8px #ff3333";
-    customCursor.style.display = "none"; // Hidden by default
+    customCursor.style.display = "none"; 
     
     customCursor.style.backgroundImage = "url('images/vitoria.gif')"; 
     customCursor.style.backgroundSize = "contain";
@@ -67,9 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(customCursor);
 
-
-
-    // Track mouse movement to slide the circle around
+    // Dynamic mouse tracker & dynamic image swapper
     window.addEventListener("mousemove", (e) => {
         customCursor.style.left = e.clientX + "px";
         customCursor.style.top = e.clientY + "px";
@@ -77,15 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const hoveringClickable = e.target.closest("a, button, label, input[type='checkbox']");
 
         if (hoveringClickable) {
-            // SWAP TO YOUR LINK/HOVER IMAGE HERE
             customCursor.style.backgroundImage = "url('images/reimu-dance.gif')"; 
         } else {
-            // SWAP BACK TO DEFAULT IMAGE WHEN NOT HOVERING
             customCursor.style.backgroundImage = "url('images/vitoria.gif')"; 
         }
     });
-
-
 
     // ==========================================
     // 3. THE TOGGLE CONTROLLER BOX
@@ -101,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     controlBox.style.color = "#fff";
     controlBox.style.fontSize = "14px";
 
-    // Build the checkbox layout inside the box
     controlBox.innerHTML = `
         <label style="cursor: pointer;">
             <input type="checkbox" id="cursorToggle" style="margin-right: 8px;"> 
@@ -109,18 +97,47 @@ document.addEventListener("DOMContentLoaded", () => {
         </label>
     `;
 
-    // Drop the toggle control panel right into the page body
-    document.body.insertBefore(controlBox, document.body.firstChild);
+    // Drop it right below our active greeting banner structure cleanly
+    document.body.appendChild(controlBox);
 
-    // Listen for the user clicking the checkbox
     const checkbox = document.getElementById("cursorToggle");
-    checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-            customCursor.style.display = "block";  // Turn custom cursor ON
-            document.body.style.cursor = "none";  // Hide the default mouse pointer
-        } else {
-            customCursor.style.display = "none";   // Turn custom cursor OFF
-            document.body.style.cursor = "default"; // Bring back default pointer
-        }
-    });
-});
+    if (checkbox) {
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                customCursor.style.display = "block";  
+                document.body.style.cursor = "none";  
+            } else {
+                customCursor.style.display = "none";   
+                document.body.style.cursor = "default"; 
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. VISUAL NOVEL POP-UP OVERLAY SYSTEM
+    // ==========================================
+    const gameModal = document.getElementById("gameModal");
+    const launchGameBtn = document.getElementById("launchGameBtn");
+    const closeGameBtn = document.getElementById("closeGameBtn");
+
+    // Click trigger button -> Pop open the window view
+    if (launchGameBtn && gameModal) {
+        launchGameBtn.addEventListener("click", () => {
+            gameModal.style.display = "flex";
+        });
+    }
+
+    // Click the close action "X" -> Close window layer and reset game audio
+    if (closeGameBtn && gameModal) {
+        closeGameBtn.addEventListener("click", () => {
+            gameModal.style.display = "none";
+            
+            const iframe = gameModal.querySelector("iframe");
+            if (iframe) {
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            }
+        });
+    }
+
+}); // Exactly ONE clean file-end bracket closes out the whole DOM tree wrapper
