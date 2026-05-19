@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             greetingBanner.remove();
         }, 1000);
-
     }, 5000); 
 
     // ==========================================
