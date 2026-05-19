@@ -47,13 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const customCursor = document.createElement("div");
     customCursor.style.width = "20px";
     customCursor.style.height = "20px";
-    customCursor.style.border = "2px solid #ff3333";
     customCursor.style.borderRadius = "50px";
     customCursor.style.position = "fixed";
     customCursor.style.transform = "translate(-50%, -50%)";
     customCursor.style.pointerEvents = "none"; 
     customCursor.style.zIndex = "9999";
-    customCursor.style.boxShadow = "0 0 8px #ff3333";
     customCursor.style.display = "none"; 
     
     customCursor.style.backgroundImage = "url('images/vitoria.gif')"; 
