@@ -67,11 +67,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(customCursor);
 
+
+
     // Track mouse movement to slide the circle around
     window.addEventListener("mousemove", (e) => {
         customCursor.style.left = e.clientX + "px";
         customCursor.style.top = e.clientY + "px";
+
+        const hoveringClickable = e.target.closest("a, button, label, input[type='checkbox']");
+
+        if (hoveringClickable) {
+            // SWAP TO YOUR LINK/HOVER IMAGE HERE
+            customCursor.style.backgroundImage = "url('images/reimu-dance.gif')"; 
+        } else {
+            // SWAP BACK TO DEFAULT IMAGE WHEN NOT HOVERING
+            customCursor.style.backgroundImage = "url('images/vitoria.gif')"; 
+        }
     });
+
+
 
     // ==========================================
     // 3. THE TOGGLE CONTROLLER BOX
