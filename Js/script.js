@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
 
     }, 5000); 
-});
+
     // ==========================================
     // 2. CUSTOM CURSOR CREATION (Sits invisible for now)
     // ==========================================
