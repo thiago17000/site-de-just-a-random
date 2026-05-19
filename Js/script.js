@@ -30,10 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
     greetingBanner.style.border = "1px solid #ff3333";
     greetingBanner.style.boxShadow = "0 0 10px rgba(255, 51, 51, 0.5)";
     greetingBanner.style.maxWidth = "600px";
+    greetingBanner.style.transition = "opacity 1s ease, transform 1s ease";
+    greetingBanner.style.opacity = "1";
 
     // 3. Inject it safely at the very top of your page body
     document.body.insertBefore(greetingBanner, document.body.firstChild);
     
-    // Log to console just so you can verify it ran perfectly
-    console.log("JavaScript greeting injected successfully!");
+    setTimeout(() => {
+        // Start the fade out and slightly slide it up
+        greetingBanner.style.opacity = "0";
+        greetingBanner.style.transform = "translateY(-20px)";
+        
+        // Wait 1 second for the fade animation to finish, then completely remove it from the page layout
+        setTimeout(() => {
+            greetingBanner.remove();
+        }, 1000);
+
+    }, 10000); 
 });
