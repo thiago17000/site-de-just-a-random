@@ -45,5 +45,5 @@ document.addEventListener("DOMContentLoaded", () => {
             greetingBanner.remove();
         }, 1000);
 
-    }, 10000); 
+    }, 5000); 
 });
