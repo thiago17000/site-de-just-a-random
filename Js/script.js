@@ -61,10 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     customCursor.style.boxShadow = "0 0 8px #ff3333";
     customCursor.style.display = "none"; // Hidden by default
     
-    // FUTURE UPGRADE: When you find an image cursor you like, 
-    // remove the comment below and add the URL link:
-    // customCursor.style.backgroundImage = "url('YOUR_IMAGE_URL_HERE')";
-    // customCursor.style.backgroundSize = "contain";
+    customCursor.style.backgroundImage = "url('images/vitoria.gif')"; 
+    customCursor.style.backgroundSize = "contain";
+    customCursor.style.backgroundRepeat = "no-repeat";
 
     document.body.appendChild(customCursor);
 
