@@ -47,3 +47,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 5000); 
 });
+    // ==========================================
+    // 2. CUSTOM CURSOR CREATION (Sits invisible for now)
+    // ==========================================
+    const customCursor = document.createElement("div");
+    customCursor.style.width = "20px";
+    customCursor.style.height = "20px";
+    customCursor.style.border = "2px solid #ff3333";
+    customCursor.style.borderRadius = "50px";
+    customCursor.style.position = "fixed";
+    customCursor.style.transform = "translate(-50%, -50%)";
+    customCursor.style.pointerEvents = "none"; // Keeps it from blocking clicks
+    customCursor.style.zIndex = "9999";
+    customCursor.style.boxShadow = "0 0 8px #ff3333";
+    customCursor.style.display = "none"; // Hidden by default
+    
+    // FUTURE UPGRADE: When you find an image cursor you like, 
+    // remove the comment below and add the URL link:
+    // customCursor.style.backgroundImage = "url('YOUR_IMAGE_URL_HERE')";
+    // customCursor.style.backgroundSize = "contain";
+
+    document.body.appendChild(customCursor);
+
+    // Track mouse movement to slide the circle around
+    window.addEventListener("mousemove", (e) => {
+        customCursor.style.left = e.clientX + "px";
+        customCursor.style.top = e.clientY + "px";
+    });
+
+    // ==========================================
+    // 3. THE TOGGLE CONTROLLER BOX
+    // ==========================================
+    const controlBox = document.createElement("div");
+    controlBox.style.background = "#111";
+    controlBox.style.border = "1px solid #333";
+    controlBox.style.padding = "10px";
+    controlBox.style.margin = "10px auto";
+    controlBox.style.maxWidth = "200px";
+    controlBox.style.textAlign = "center";
+    controlBox.style.borderRadius = "5px";
+    controlBox.style.color = "#fff";
+    controlBox.style.fontSize = "14px";
+
+    // Build the checkbox layout inside the box
+    controlBox.innerHTML = `
+        <label style="cursor: pointer;">
+            <input type="checkbox" id="cursorToggle" style="margin-right: 8px;"> 
+            Custom Cursor
+        </label>
+    `;
+
+    // Drop the toggle control panel right into the page body
+    document.body.insertBefore(controlBox, document.body.firstChild);
+
+    // Listen for the user clicking the checkbox
+    const checkbox = document.getElementById("cursorToggle");
+    checkbox.addEventListener("change", () => {
+        if (checkbox.checked) {
+            customCursor.style.display = "block";  // Turn custom cursor ON
+            document.body.style.cursor = "none";  // Hide the default mouse pointer
+        } else {
+            customCursor.style.display = "none";   // Turn custom cursor OFF
+            document.body.style.cursor = "default"; // Bring back default pointer
+        }
+    });
+});
