@@ -14,19 +14,20 @@
         }
         body {
             margin: 0;
-            padding:0;
+            padding: 20px; /* Gives some breathing room from the screen edge */
             background: transparent;
             width: 100%;
             background-image: url('images/theme_ntp_background.png');
             background-attachment: fixed;
-            background-position: center;
+            background-position: center top; /* Anchors the top of the background image */
             background-repeat: no-repeat;
             background-size: cover;
             min-height: 100vh; 
             background-color: #121212; /* Falls back to dark if image loads slowly */
             color: #ffffff;           /* Makes your text white so it is readable */
             font-family: sans-serif;
-            }
+            box-sizing: border-box;
+        }
             
         @media (max-width: 768px) {
             body {
@@ -55,151 +56,146 @@
             margin: 20px auto;
             max-width: 200px; /* Adjust size for your Linktree GIF */
         }
-     .corner-badge {
-    position: fixed;   /* Pins it to the screen */
-    top: 15px;         /* 15 pixels down from the top edge */
-    left: 15px;        /* 15 pixels in from the left edge */
-    width: 80px;       /* Set whatever size you want */
-    height: 80px;
-    image-rendering: pixelated; /* Keeps it sharp! */
-    z-index: 100;      /* Ensures it floats on top of the backgrounds */
+        .corner-badge {
+            position: fixed;   /* Pins it to the screen */
+            top: 15px;         /* 15 pixels down from the top edge */
+            left: 15px;        /* 15 pixels in from the left edge */
+            width: 80px;       /* Set whatever size you want */
+            height: 80px;
+            image-rendering: pixelated; /* Keeps it sharp! */
+            z-index: 100;      /* Ensures it floats on top of the backgrounds */
         }
-    .right-badge {
-    position: fixed;   /* Pins it to the screen */
-    top: 15px;         /* 15 pixels down from the top edge */
-    right: 15px;        /* 15 pixels in from the left edge */
-    width: 80px;       /* Set whatever size you want */
-    height: 80px;
-    image-rendering: pixelated; /* Keeps it sharp! */
-    z-index: 100;      /* Ensures it floats on top of the backgrounds */
-    }
-     .music-card {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(34, 34, 34, 0.9);
-    border: 3px solid #ffffff;
-    border-radius: 8px;
-    padding: 12px;
-    z-index: 1000;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        .right-badge {
+            position: fixed;   /* Pins it to the screen */
+            top: 15px;         /* 15 pixels down from the top edge */
+            right: 15px;        /* 15 pixels in from the left edge */
+            width: 80px;       /* Set whatever size you want */
+            height: 80px;
+            image-rendering: pixelated; /* Keeps it sharp! */
+            z-index: 100;      /* Ensures it floats on top of the backgrounds */
         }
-
-     .track-text {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #00ffcc; 
-    margin-bottom: 8px;
+        .music-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(34, 34, 34, 0.9);
+            border: 3px solid #ffffff;
+            border-radius: 8px;
+            padding: 12px;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-     .music-controls button {
-    background-color: #333333;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    padding: 6px 10px;
-    margin: 0 5px; 
-    cursor: pointer;
-    border-radius: 4px;
+        .track-text {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #00ffcc; 
+            margin-bottom: 8px;
         }
 
-     .music-controls button:hover {
-    background-color: #555555;
+        .music-controls button {
+            background-color: #333333;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 6px 10px;
+            margin: 0 5px; 
+            cursor: pointer;
+            border-radius: 4px;
         }
-     .music-btn-img {
-    width: 80px;       
-    height: 80px;
-    display: block;
-    margin: 0 auto;
-    image-rendering: pixelated; 
-    object-fit: contain; /* Prevents the icons from stretching/squishing */
+
+        .music-controls button:hover {
+            background-color: #555555;
         }
-        @media (max-width: 768px) {
-    .music-card {
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        padding: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .track-text {
-        font-size: 11px; /* Smaller text for small screens */
-        margin-bottom: 0;
-        margin-right: 10px;
-    }
-
-    .music-btn-img {
-        width: 30px; /* Smaller buttons on mobile */
-        height: 30px;
-    }
-}
-    .thanks-box {
-    background-color: rgba(255, 255, 255, 0.1); /* Light transparent glow */
-    border: 2px solid #00ffcc;
-    margin: 5px 0 10px 0;
-    padding: 5px;
-    border-radius: 4px;
-    text-align: center;
-    position: fixed;
-    right: 20px;         /* Distance from right edge */
-    top: 110px;
-}
-
-    .thanks-header {
-    font-size: 10px;
-    color: #ffffff;
-    margin: 0;
-    font-family: sans-serif;
-}
-
-    .thanks-user {
-    font-size: 14px;
-    color: #ffcc00;
-    margin: 2px 0;
-    font-weight: bold;
-}
+        .music-btn-img {
+            width: 80px;       
+            height: 80px;
+            display: block;
+            margin: 0 auto;
+            image-rendering: pixelated; 
+            object-fit: contain; /* Prevents the icons from stretching/squishing */
+        }
         
+        @media (max-width: 768px) {
+            .music-card {
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
 
-     </style>
+            .track-text {
+                font-size: 11px; /* Smaller text for small screens */
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            .music-btn-img {
+                width: 30px; /* Smaller buttons on mobile */
+                height: 30px;
+            }
+        }
+        .thanks-box {
+            background-color: rgba(255, 255, 255, 0.1); /* Light transparent glow */
+            border: 2px solid #00ffcc;
+            margin: 5px 0 10px 0;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+            position: fixed;
+            right: 20px;         /* Distance from right edge */
+            top: 110px;
+            z-index: 100;
+        }
+
+        .thanks-header {
+            font-size: 10px;
+            color: #ffffff;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .thanks-user {
+            font-size: 14px;
+            color: #ffcc00;
+            margin: 2px 0;
+            font-weight: bold;
+        }
+    </style>
 </head>
-        <body>
+<body>
 
+    <audio id="game-audio"></audio>
 
-
-<audio id="game-audio"></audio>
     <div class="music-card" id="music-player">
-    <!-- The toggle button stays visible -->
-    <button onclick="toggleMinimize()" style="background:none; border:1px solid #fff; color:#fff; cursor:pointer; width: 100%;">_</button>
-    
-    <!-- Everything in this div will vanish -->
-    <div id="player-content">
-        <span id="track-title" class="track-text">Music: Off</span>
-        <div class="music-controls">
-            <button onclick="prevTrack()">
-                <img src="images/flan is listening.gif" alt="Prev" class="music-btn-img">
-            </button>
-            <button id="play-btn" onclick="togglePlay()">
-                <img src="images/frog choir.gif" alt="Play" class="music-btn-img" id="play-icon-img">
-            </button>
-            <button id="stop-btn" onclick="stopMusic()">
-                <img src="images/izayoi-sakuya-touhou.gif" alt="Stop" class="music-btn-img" id="stop-icon-img">
-            </button>
-            <button onclick="nextTrack()">
-                <img src="images/sub.gif" alt="Next" class="music-btn-img">
-            </button>
+        <button onclick="toggleMinimize()" style="background:none; border:1px solid #fff; color:#fff; cursor:pointer; width: 100%;">_</button>
+        <div id="player-content">
+            <span id="track-title" class="track-text">Music: Off</span>
+            <div class="music-controls">
+                <button onclick="prevTrack()">
+                    <img src="images/flan is listening.gif" alt="Prev" class="music-btn-img">
+                </button>
+                <button id="play-btn" onclick="togglePlay()">
+                    <img src="images/frog choir.gif" alt="Play" class="music-btn-img" id="play-icon-img">
+                </button>
+                <button id="stop-btn" onclick="stopMusic()">
+                    <img src="images/izayoi-sakuya-touhou.gif" alt="Stop" class="music-btn-img" id="stop-icon-img">
+                </button>
+                <button onclick="nextTrack()">
+                    <img src="images/sub.gif" alt="Next" class="music-btn-img">
+                </button>
+            </div>
         </div>
     </div>
-</div>
-    <div id="player-content">
-    
+
     <div class="thanks-box">
         <p class="thanks-header">SPECIAL THANKS</p>
         <p class="thanks-user">@somerandom(that's me)</p>
@@ -208,397 +204,321 @@
         <p class="thanks-user">@marcos</p>
     </div>
 
-
-
-
-
-    
-
-
-
-    </style>
-</head>
-<body>
-
-    <!-- Linktree Redirect GIF at the Top -->
     <a href="https://linktr.ee/justsomerandom17000" target="_blank">
         <img src="images/vitoria.gif" alt="Visit my Linktree" class="linktree-banner">
     </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScSoQ0HumSktEDHTA9JnfGQ3wVeASzU7_ypBOmbiFBqAI4Etw/viewform?usp=header" target="_blank">
-    <img src="images/Risada.gif" alt="Logo" class="corner-badge">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSoQ0HumSktEDHTA9JnfGQ3wVeASzU7_ypBOmbiFBqAI4Etw/viewform?usp=header" target="_blank">
+        <img src="images/Risada.gif" alt="Logo" class="corner-badge">
     </a>
-        <a href="https://thiago17000.github.io/gbajs2-for-my-site/" target="_blank">
-    <img src="images/emerald logo.png" alt="Logo" class="right-badge">
+    <a href="https://thiago17000.github.io/gbajs2-for-my-site/" target="_blank">
+        <img src="images/emerald logo.png" alt="Logo" class="right-badge">
     </a>
-
-</style>
-
 
     <h2>My Game Database</h2>
 
-    <!-- Monster Girls Section -->
     <details>
         <summary><b>Monster Girls in games/sometimes romanceable</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/bof2.png" alt="Icon" class="pixel-icon">
             <span><b>Breath of Fire II:</b> one of the female party members(katt) grown atached to the protag the female character being a monster girl love is mutual and canon.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Lunar1.png" alt="Icon" class="pixel-icon">
             <span><b>Lunar: Silver Star Story complete/Harmony:</b> can't elaborate its a heavy spoiler.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Lunar2.png" alt="Icon" class="pixel-icon">
             <span><b>Lunar 2: Eternal Blue Complete:</b> can't elaborate i forgo.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
         <p><a href="downloads/monster-girls-list.txt" download="Monster_Girls.txt">💾 Download List</a></p>
     </details>
 
     <details>
         <summary><b>Monster Girls in games/sometimes romanceable pt-br</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/bof2.png" alt="Icon" class="pixel-icon">
             <span><b>Breath of Fire II:</b> uma das protagonistas femininas(katt) acaba se aproxima do protagonista no decorrer da historia ela é uma monster girl e o romance é canon.</span>
         </div> 
-        
         <div class="list-item">
             <img src="images/Lunar1.png" alt="Icon" class="pixel-icon">
             <span><b>Lunar: Silver Star Story complete/Harmony:</b> Não posso dar mais detalhes, pois é um grande spoiler.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Lunar2.png" alt="Icon" class="pixel-icon">
             <span><b>Lunar 2: Eternal Blue Complete:</b> Não posso dar mais detalhes,eu esqueci.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
         <p><a href="downloads/monster-girls-list-ptbr.txt" download="monster-girls-list-ptbr.txt">💾 Download List</a></p>
     </details>
     
     <h2>rpg games i like</h2>
 
-    <!-- female protag Section -->
     <details>
         <summary><b>female protagonist</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/ff6set.png" alt="Icon" class="pixel-icon">
             <span><b>final fantasy 6:</b> Great story and unique character designs.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/leaf.png" alt="Icon" class="pixel-icon">
             <span><b>Pokemon Leaf Green:</b> one of the two remakes for gen1 with gen 3 mechanics(i reccomend using the moemon patch for cute mons).</span>
         </div>
-
-          <div class="list-item">
+        <div class="list-item">
             <img src="images/Another Story.png" alt="Icon" class="pixel-icon">
             <span><b>Bishoujo Senshi Sailor Moon: Another Story:</b> a classic rpg from the snes era perfect for the fans of the anime.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/fire.png" alt="Icon" class="pixel-icon">
             <span><b>Pokemon Fire Red:</b> one of the two remakes for gen1 with gen 3 mechanics(i reccomend using the moemon patch for cute mons)</span>
         </div>
-        
         <div class="list-item">
             <img src="images/ordinary version.png" alt="Icon" class="pixel-icon">
             <span><b>Touhoumon Ordinary Version:</b> my favorite pokemon gen 2 hack-rom,its well made and there's new types new moves and it's a whole new experience.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Magic Knight.png" alt="Icon" class="pixel-icon">
             <span><b>Magic Knight Rayearth:</b>a classic rpg a little unbalanced sometimes,but its good and not that long a snes classic locked on jap(use eng patch).</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Shantae.png" alt="Icon" class="pixel-icon">
             <span><b>Shantae:</b> a classic 2d platformet with metroidvania elements incredible for the gbc.</span>
         </div>
-        
         <div class="list-item">
         <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
         <p><a href="downloads/female protagonist.txt" download="female protagonist.txt">💾 Download List</a></p>
     </details>
+
     <details>
         <summary><b>female protagonist pt-br</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/ff6set.png" alt="Icon" class="pixel-icon">
             <span><b>final fantasy 6:</b> Great story and unique character designs.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/leaf.png" alt="Icon" class="pixel-icon">
             <span><b>Pokemon Leaf Green:</b> um dos dois remakes da gen1 com as mecanicas da gen3(eu recomendo usar o patch de moemon).</span>
         </div>
-
-          <div class="list-item">
+        <div class="list-item">
             <img src="images/Another Story.png" alt="Icon" class="pixel-icon">
             <span><b>Bishoujo Senshi Sailor Moon: Another Story:</b> Um RPG clássico da era do SNES, perfeito para os fãs do anime.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/fire.png" alt="Icon" class="pixel-icon">
             <span><b>Pokemon Fire Red:</b> um dos dois remakes da gen1 com as mecanicas da gen3(eu recomendo usar o patch de moemon).</span>
         </div>
-        
         <div class="list-item">
             <img src="images/ordinary version.png" alt="Icon" class="pixel-icon">
             <span><b>Touhoumon Ordinary Version:</b> minha hack-rom favorita da gen2,tem novos tipos, novos golpes e é uma experiência  nova.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Magic Knight.png" alt="Icon" class="pixel-icon">
             <span><b>Magic Knight Rayearth:</b> Um RPG clássico do SNES,um pouco desequilibrado às vezes, mas bom e não muito longo.preso em jap (use o patch em inglês).</span>
         </div>
-        
         <div class="list-item">
             <img src="images/Shantae.png" alt="Icon" class="pixel-icon">
             <span><b>Shantae:</b> Um clássico jogo de plataforma 2D com elementos de Metroidvania, incrível para o Game Boy Color..</span>
         </div>
-
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
         <p><a href="downloads/female protagonist pt-br.txt" download="female protagonist pt-br.txt">💾 Download List</a></p>
     </details>
 
     <h2>achievement/trophy hunter</h2>
 
-    <!-- female protag Section -->
     <details>
         <summary><b>achievement/trophy hunter experience</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/ff6set.png" alt="Icon" class="pixel-icon">
             <span><b>final fantasy 6:</b> Great story and unique character designs.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/sword-icon.png" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
-          <div class="list-item">
-            <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
-            <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
-        </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
+        <div class="list-item">
+            <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
+            <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
+        </div>
         <p><a href="downloads/achievement\trophy hunter experience.txt" download="achievement\trophy hunter experience.txt">💾 Download List</a></p>
     </details>
 
     <details>
         <summary><b>achievement/trophy hunter experience pt-br</b> (Click to view)</summary>
         <br>
-        
         <div class="list-item">
             <img src="images/ff6set.png" alt="Icon" class="pixel-icon">
             <span><b>final fantasy 6:</b> Great story and unique character designs.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/sword-icon.png" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
-          <div class="list-item">
-            <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
-            <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
-        </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-        
         <div class="list-item">
             <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
             <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
         </div>
-
+        <div class="list-item">
+            <img src="images/rune4.jpg" alt="Icon" class="pixel-icon">
+            <span><b>Rune Factory 4:</b> Includes monster taming features on your farm.</span>
+        </div>
         <p><a href="downloads/achievement\trophy hunter experience pt-br.txt" download="achievement\trophy hunter experience pt-br.txt">💾 Download List</a></p>
     </details>
 
     <div class="game-launcher-box" style="text-align: center; padding: 20px; border: 1px dashed #ff3333; margin: 15px 0;">
-    <p style="color: #888; font-family: monospace; margin-bottom: 15px;">[ SECURE VIRTUAL MATRIX DETECTED ]</p>
-    <button id="launchGameBtn" style="background: #1a1a1a; color: #ff3333; border: 1px solid #ff3333; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 10px rgba(255, 51, 51, 0.2); font-family: monospace; transition: all 0.2s ease;">
-        EXECUTE_VN_CORE.EXE
-    </button>
+        <p style="color: #888; font-family: monospace; margin-bottom: 15px;">[ SECURE VIRTUAL MATRIX DETECTED ]</p>
+        <button id="launchGameBtn" style="background: #1a1a1a; color: #ff3333; border: 1px solid #ff3333; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-weight: bold; box-shadow: 0 0 10px rgba(255, 51, 51, 0.2); font-family: monospace; transition: all 0.2s ease;">
+            EXECUTE_VN_CORE.EXE
+        </button>
     </div>
     
     <div id="gameModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
-    
-    <div style="position: relative; background: #0a0a0a; border: 2px solid #ff3333; width: 95%; max-width: 960px; height: 540px; border-radius: 12px; box-shadow: 0 0 30px rgba(255, 51, 51, 0.5); color: white; display: flex; flex-direction: column; overflow: hidden;">
-        
-        <div style="background: #141414; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222;">
-            <span style="font-weight: bold; color: #ff3333; font-family: monospace; letter-spacing: 1px;">⚡ MAIN_FRAME // COGNITIVE_SIMULATION</span>
-            <button id="closeGameBtn" style="background: none; border: none; color: #ff3333; font-size: 24px; font-weight: bold; cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.2s;">&times;</button>
+        <div style="position: relative; background: #0a0a0a; border: 2px solid #ff3333; width: 95%; max-width: 960px; height: 540px; border-radius: 12px; box-shadow: 0 0 30px rgba(255, 51, 51, 0.5); color: white; display: flex; flex-direction: column; overflow: hidden;">
+            <div style="background: #141414; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222;">
+                <span style="font-weight: bold; color: #ff3333; font-family: monospace; letter-spacing: 1px;">⚡ MAIN_FRAME // COGNITIVE_SIMULATION</span>
+                <button id="closeGameBtn" style="background: none; border: none; color: #ff3333; font-size: 24px; font-weight: bold; cursor: pointer; line-height: 1; opacity: 0.7; transition: opacity 0.2s;">&times;</button>
+            </div>
+            <iframe 
+                src="https://thiago17000.github.io/my-visual-nove-for-my-site/" 
+                style="flex: 1; border: none; width: 100%; height: 100%; background: #000;"
+                allow="autoplay">
+            </iframe>
         </div>
-
-        <iframe 
-            src="https://thiago17000.github.io/my-visual-nove-for-my-site/" 
-            style="flex: 1; border: none; width: 100%; height: 100%; background: #000;"
-            allow="autoplay">
-        </iframe>
-
     </div>
-</div>
-            <!-- JavaScript to control the playlist and handle browser rules -->
-<script>
-  // List your uploaded mp3 files and their display names here
-  const playlist = [
-    { name: "Track 1 - Serenade of Water", file: "audio/Serenade of Water - The Legend of Zelda_ Twilight Princess [XviGp0dWVTU].mp3" },
-    { name: "Track 2 - Sad Song", file: "audio/Sad Song - Super Mario RPG_ Legend of the Seven Stars (Rip GiIvaSunner) [KQxeGYjJZBM].mp3" },
-    { name: "Track 3 - Golshin Golshin Golshishin", file: "audio/(Game OST) Uma Musume - Golshin Golshin Golshishin [iNfemqp0PlU].mp3" },
-    { name: "Track 4 - Smooth Criminal", file: "audio/smooth.mp3" },
-    { name: "Track 5 - Billie Jean", file: "audio/Billie Jean.mp3" },
-    { name: "Track 6 - ZZZ 60% daily", file: "audio/zzz 60 Daily.mp3" },
-    { name: "Track 7 - Bad apple", file: "audio/bad apple.mp3" },
-    { name: "Track 8 - epileptic kid-salvation/destruction", file: "audio/salvation-destruction.mp3" },
-    { name: "Track 9 - love-colored master spark - l o f i 「 Touhou Project 」", file: "audio/love-colored-master-spark_lofi.mp3" }
-  ];
 
-  let currentTrackIndex = 0;
-  const audioPlayer = document.getElementById("game-audio");
-  const playIconImg = document.getElementById("play-icon-img");
-  const trackTitle = document.getElementById("track-title");
+    <script>
+      const playlist = [
+        { name: "Track 1 - Serenade of Water", file: "audio/Serenade of Water - The Legend of Zelda_ Twilight Princess [XviGp0dWVTU].mp3" },
+        { name: "Track 2 - Sad Song", file: "audio/Sad Song - Super Mario RPG_ Legend of the Seven Stars (Rip GiIvaSunner) [KQxeGYjJZBM].mp3" },
+        { name: "Track 3 - Golshin Golshin Golshishin", file: "audio/(Game OST) Uma Musume - Golshin Golshin Golshishin [iNfemqp0PlU].mp3" },
+        { name: "Track 4 - Smooth Criminal", file: "audio/smooth.mp3" },
+        { name: "Track 5 - Billie Jean", file: "audio/Billie Jean.mp3" },
+        { name: "Track 6 - ZZZ 60% daily", file: "audio/zzz 60 Daily.mp3" },
+        { name: "Track 7 - Bad apple", file: "audio/bad apple.mp3" },
+        { name: "Track 8 - epileptic kid-salvation/destruction", file: "audio/salvation-destruction.mp3" },
+        { name: "Track 9 - love-colored master spark - l o f i 「 Touhou Project 」", file: "audio/love-colored-master-spark_lofi.mp3" }
+      ];
 
-  // Load the first track automatically on startup (but do not autoplay due to browser rules)
-  audioPlayer.src = playlist[currentTrackIndex].file;
+      let currentTrackIndex = 0;
+      const audioPlayer = document.getElementById("game-audio");
+      const playIconImg = document.getElementById("play-icon-img");
+      const trackTitle = document.getElementById("track-title");
 
-  function togglePlay() {
-    if (audioPlayer.paused) {
-      audioPlayer.loop = true;
-      audioPlayer.play();
-      // Swaps your play icon to the pause icon because it is actively playing
-      playIconImg.src = "images/frog choir.gif";
-      trackTitle.innerText = playlist[currentTrackIndex].name;
-    } else {
-      audioPlayer.pause();
-      // Swaps it back to your play icon when paused
-      playIconImg.src = "images/frog choir.gif";
-    }
-  }
+      audioPlayer.src = playlist[currentTrackIndex].file;
 
-  function stopMusic() {
-    audioPlayer.pause(); 
-    audioPlayer.currentTime = 0; // Rewinds song to 0 seconds
-    playIconImg.src = "images/frog choir.gif"; // Resets icon to play state
-    trackTitle.innerText = "Music: Stopped";
-  }
+      function togglePlay() {
+        if (audioPlayer.paused) {
+          audioPlayer.loop = true;
+          audioPlayer.play();
+          playIconImg.src = "images/frog choir.gif";
+          trackTitle.innerText = playlist[currentTrackIndex].name;
+        } else {
+          audioPlayer.pause();
+          playIconImg.src = "images/frog choir.gif";
+        }
+      }
 
-  function nextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-    changeTrack();
-  }
+      function stopMusic() {
+        audioPlayer.pause(); 
+        audioPlayer.currentTime = 0; 
+        playIconImg.src = "images/frog choir.gif"; 
+        trackTitle.innerText = "Music: Stopped";
+      }
 
-  function prevTrack() {
-    currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
-    changeTrack();
-  }
+      function nextTrack() {
+        currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+        changeTrack();
+      }
 
-  function changeTrack() {
-    audioPlayer.src = playlist[currentTrackIndex].file;
-    audioPlayer.loop = true;
-    audioPlayer.play();
-    playIconImg.src = "images/frog choir.gif";
-    trackTitle.innerText = playlist[currentTrackIndex].name;
-  }
-  function toggleMinimize() {
-   const content = document.getElementById("player-content");
-     if (content.style.display === "none") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
-</script>
+      function prevTrack() {
+        currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+        changeTrack();
+      }
 
-<script src="Js/script.js"></script>
+      function changeTrack() {
+        audioPlayer.src = playlist[currentTrackIndex].file;
+        audioPlayer.loop = true;
+        audioPlayer.play();
+        playIconImg.src = "images/frog choir.gif";
+        trackTitle.innerText = playlist[currentTrackIndex].name;
+      }
+
+      function toggleMinimize() {
+        const content = document.getElementById("player-content");
+        if (content.style.display === "none") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+      }
+    </script>
+    <script src="Js/script.js"></script>
 </body>
 </html>
