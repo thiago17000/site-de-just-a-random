@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </label>
     `;
 
-    // Drop it right below our active greeting banner structure cleanly
     document.body.appendChild(controlBox);
 
     const checkbox = document.getElementById("cursorToggle");
@@ -118,14 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const launchGameBtn = document.getElementById("launchGameBtn");
     const closeGameBtn = document.getElementById("closeGameBtn");
 
-    // Click trigger button -> Pop open the window view
+    // Click trigger button -> Open Visual Novel layer and completely shut off RPG view
     if (launchGameBtn && gameModal) {
         launchGameBtn.addEventListener("click", () => {
+            if (game2Modal) game2Modal.style.display = "none"; // Hard boundary check
             gameModal.style.display = "flex";
         });
     }
 
-    // Click the close action "X" -> Close window layer and reset game audio
+    // Click the close action "X" -> Close window layer and reset game state
     if (closeGameBtn && gameModal) {
         closeGameBtn.addEventListener("click", () => {
             gameModal.style.display = "none";
@@ -145,9 +145,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const launchGame2Btn = document.getElementById("launchGame2Btn");
     const closeGame2Btn = document.getElementById("closeGame2Btn");
 
-    // Click trigger button -> Pop open the Marisa Game frame view
+    // Click trigger button -> Open Marisa Game frame view and completely shut off VN view
     if (launchGame2Btn && game2Modal) {
         launchGame2Btn.addEventListener("click", () => {
+            if (gameModal) gameModal.style.display = "none"; // Hard boundary check
             game2Modal.style.display = "flex";
         });
     }
@@ -165,4 +166,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-}); // Exactly ONE clean file-end bracket closes out the whole DOM tree wrapper
+}); // Clean file-end DOM wrapper wrap-up
