@@ -138,4 +138,85 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+// ==========================================
+    // 5. RPG MARISA JOURNEY POP-UP SYSTEM
+    // ==========================================
+    const game2Modal = document.getElementById("game2Modal");
+    const launchGame2Btn = document.getElementById("launchGame2Btn");
+    const closeGame2Btn = document.getElementById("closeGame2Btn");
+
+    // Click trigger button -> Pop open the Marisa Game frame view
+    if (launchGame2Btn && game2Modal) {
+        launchGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "flex";
+        });
+    }
+
+    // Click the close action "X" -> Close Marisa frame and reload/reset state
+    if (closeGame2Btn && game2Modal) {
+        closeGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "none";
+            
+            const iframe = game2Modal.querySelector("iframe");
+            if (iframe) {
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            }
+        });
+    }
+
+});// ==========================================
+    // 5. RPG MARISA JOURNEY POP-UP SYSTEM
+    // ==========================================
+    const game2Modal = document.getElementById("game2Modal");
+    const launchGame2Btn = document.getElementById("launchGame2Btn");
+    const closeGame2Btn = document.getElementById("closeGame2Btn");
+
+    // Click trigger button -> Pop open the Marisa Game frame view
+    if (launchGame2Btn && game2Modal) {
+        launchGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "flex";
+        });
+    }
+
+    // Click the close action "X" -> Close Marisa frame and reload/reset state
+    if (closeGame2Btn && game2Modal) {
+        closeGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "none";
+            
+            const iframe = game2Modal.querySelector("iframe");
+            if (iframe) {
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            }
+        });
+    }
+
+});// ==========================================
+    // 5. RPG MARISA JOURNEY POP-UP SYSTEM
+    // ==========================================
+    const game2Modal = document.getElementById("game2Modal");
+    const launchGame2Btn = document.getElementById("launchGame2Btn");
+    const closeGame2Btn = document.getElementById("closeGame2Btn");
+
+    // Click trigger button -> Pop open the Marisa Game frame view
+    if (launchGame2Btn && game2Modal) {
+        launchGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "flex";
+        });
+    }
+
+    // Click the close action "X" -> Close Marisa frame and reload/reset state
+    if (closeGame2Btn && game2Modal) {
+        closeGame2Btn.addEventListener("click", () => {
+            game2Modal.style.display = "none";
+            
+            const iframe = game2Modal.querySelector("iframe");
+            if (iframe) {
+                const currentSrc = iframe.src;
+                iframe.src = currentSrc;
+            }
+        });
+    }
+
 }); // Exactly ONE clean file-end bracket closes out the whole DOM tree wrapper
