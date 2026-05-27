@@ -191,8 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-});// ==========================================
+    // ==========================================
     // 5. RPG MARISA JOURNEY POP-UP SYSTEM
     // ==========================================
     const game2Modal = document.getElementById("game2Modal");
