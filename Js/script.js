@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
+    // GLOBAL MODAL INITIALIZATION
+    // (Declared first so both sections can safely see them)
+    // ==========================================
+    const gameModal = document.getElementById("gameModal");
+    const game2Modal = document.getElementById("game2Modal");
+
+    // ==========================================
     // 1. TIMED GREETING BANNER
     // ==========================================
     const currentHour = new Date().getHours();
@@ -113,19 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 4. VISUAL NOVEL POP-UP OVERLAY SYSTEM
     // ==========================================
-    const gameModal = document.getElementById("gameModal");
     const launchGameBtn = document.getElementById("launchGameBtn");
     const closeGameBtn = document.getElementById("closeGameBtn");
 
-    // Click trigger button -> Open Visual Novel layer and completely shut off RPG view
     if (launchGameBtn && gameModal) {
         launchGameBtn.addEventListener("click", () => {
-            if (game2Modal) game2Modal.style.display = "none"; // Hard boundary check
+            if (game2Modal) game2Modal.style.display = "none"; 
             gameModal.style.display = "flex";
         });
     }
 
-    // Click the close action "X" -> Close window layer and reset game state
     if (closeGameBtn && gameModal) {
         closeGameBtn.addEventListener("click", () => {
             gameModal.style.display = "none";
@@ -141,19 +145,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 5. RPG MARISA JOURNEY POP-UP SYSTEM
     // ==========================================
-    const game2Modal = document.getElementById("game2Modal");
     const launchGame2Btn = document.getElementById("launchGame2Btn");
     const closeGame2Btn = document.getElementById("closeGame2Btn");
 
-    // Click trigger button -> Open Marisa Game frame view and completely shut off VN view
     if (launchGame2Btn && game2Modal) {
         launchGame2Btn.addEventListener("click", () => {
-            if (gameModal) gameModal.style.display = "none"; // Hard boundary check
+            if (gameModal) gameModal.style.display = "none"; 
             game2Modal.style.display = "flex";
         });
     }
 
-    // Click the close action "X" -> Close Marisa frame and reload/reset state
     if (closeGame2Btn && game2Modal) {
         closeGame2Btn.addEventListener("click", () => {
             game2Modal.style.display = "none";
@@ -166,4 +167,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-}); // Clean file-end DOM wrapper wrap-up
+});
